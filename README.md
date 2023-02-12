@@ -50,16 +50,16 @@ Cada evento contiene los siguientes datos:
 * Precio.
 
 ## Entrega
-- Debe tener los 6 HTML (Home, Upcoming Events, Past Events, Contact, Details, Stats) previamente presentados en mockups.
+- [] Debe tener los 6 HTML (Home, Upcoming Events, Past Events, Contact, Details, Stats) previamente presentados en mockups.
 
-- Tu navBar debe estar funcionando y debes poder navegar entre las diferentes páginas. Evita tener errores del Validador, estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
+- [] Tu navBar debe estar funcionando y debes poder navegar entre las diferentes páginas. Evita tener errores del Validador, estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
 
-- Puedes utilizar tu propio CSS o la librería que prefieras, si lo haces con una librería, asegúrate de que tu proyecto te representa, es decir, que los componentes no son idénticos a los que se encuentran en la librería.
+- [] Puedes utilizar tu propio CSS o la librería que prefieras, si lo haces con una librería, asegúrate de que tu proyecto te representa, es decir, que los componentes no son idénticos a los que se encuentran en la librería.
 
-- Incorpora el logo y el favicon en tu página.
+- [x] Incorpora el logo y el favicon en tu página.
 
-- El detalle en las fichas que se encuentran en Home o Upcoming Events y Past Events debe ser menor que el que encontramos en Details, esto es debido a que esta última completa toda la información del evento y las anteriores son resúmenes o introducción del evento.
+- [] El detalle en las fichas que se encuentran en Home o Upcoming Events y Past Events debe ser menor que el que encontramos en Details, esto es debido a que esta última completa toda la información del evento y las anteriores son resúmenes o introducción del evento.
 
-- Utiliza las fotos que te enviamos para hacer las fichas de los eventos.
+- [] Utiliza las fotos que te enviamos para hacer las fichas de los eventos.
 
-- Distribuye correctamente los espacios y ten en cuenta que este proyecto será full responsive.
+- [] Distribuye correctamente los espacios y ten en cuenta que este proyecto será full responsive.
