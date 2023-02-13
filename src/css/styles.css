@@ -38,3 +38,8 @@
 .nav-link:hover {
     color: var(--accent-color) !important;
 }
+
+footer {
+    background-color: var(--accent-color);
+    color: white;
+}

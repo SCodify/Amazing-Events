@@ -25,7 +25,7 @@ Mientras trabajo con Amazing Events en los objetivos de su proyecto, me gustarí
 ![](./Mockup/HOME.png)
 
 ### Events:
-- Tenga en cuenta que es una página para eventos futuros y otra para los eventos pasados con el mismo diseño
+- Tenga en cuenta que es una página para Upcoming Events y otra para los Past Events con el mismo diseño
 
 ![](./Mockup/EVENTS.png)
 ### Contact:
@@ -52,7 +52,9 @@ Cada evento contiene los siguientes datos:
 ## Entrega
 - [X] Debe tener los 6 HTML (Home, Upcoming Events, Past Events, Contact, Details, Stats) previamente presentados en mockups.
 
-- [X] Tu navBar debe estar funcionando y debes poder navegar entre las diferentes páginas. Evita tener errores del Validador, estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
+- [X] Tu navBar debe estar funcionando y debes poder navegar entre las diferentes páginas. 
+
+- [] Evita tener errores del Validador, estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
 
 - [X] Puedes utilizar tu propio CSS o la librería que prefieras, si lo haces con una librería, asegúrate de que tu proyecto te representa, es decir, que los componentes no son idénticos a los que se encuentran en la librería.
 
