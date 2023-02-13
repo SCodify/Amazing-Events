@@ -50,11 +50,11 @@ Cada evento contiene los siguientes datos:
 * Precio.
 
 ## Entrega
-- [] Debe tener los 6 HTML (Home, Upcoming Events, Past Events, Contact, Details, Stats) previamente presentados en mockups.
+- [X] Debe tener los 6 HTML (Home, Upcoming Events, Past Events, Contact, Details, Stats) previamente presentados en mockups.
 
-- [] Tu navBar debe estar funcionando y debes poder navegar entre las diferentes páginas. Evita tener errores del Validador, estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
+- [X] Tu navBar debe estar funcionando y debes poder navegar entre las diferentes páginas. Evita tener errores del Validador, estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
 
-- [] Puedes utilizar tu propio CSS o la librería que prefieras, si lo haces con una librería, asegúrate de que tu proyecto te representa, es decir, que los componentes no son idénticos a los que se encuentran en la librería.
+- [X] Puedes utilizar tu propio CSS o la librería que prefieras, si lo haces con una librería, asegúrate de que tu proyecto te representa, es decir, que los componentes no son idénticos a los que se encuentran en la librería.
 
 - [x] Incorpora el logo y el favicon en tu página.
 

@@ -4,15 +4,13 @@
   "description": "Introduction to JavaScript Development [FE03-TT] - Amazing Events",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server --entry-file=/public/"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Christian Ledesma",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.3",
-    "live-server": "^1.2.2"
+    "bootstrap-icons": "^1.10.3"
   }
 }
