@@ -148,13 +148,13 @@ footer a:focus
     background-color: var(--secondary-color2);
 }
 
-.btn-bottom .btn {
+.btn-custom {
     background-color: var(--text-color);
     color: white;
     cursor: pointer;
 }
 
-.btn-bottom .btn:hover {
+.btn-custom:hover {
     background-color: var(--secondary-color1);
     color: white;
 }
