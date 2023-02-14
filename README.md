@@ -89,4 +89,4 @@ Cada evento contiene los siguientes datos:
 
 - [X] Utiliza las fotos que te enviamos para hacer las fichas de los eventos.
 
-- [W] Distribuye correctamente los espacios y ten en cuenta que este proyecto será full responsive.
+- [X] Distribuye correctamente los espacios y ten en cuenta que este proyecto será full responsive.
