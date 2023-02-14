@@ -85,7 +85,7 @@ Cada evento contiene los siguientes datos:
 
 - [x] Incorpora el logo y el favicon en tu página.
 
-- [] El detalle en las fichas que se encuentran en Home o Upcoming Events y Past Events debe ser menor que el que encontramos en Details, esto es debido a que esta última completa toda la información del evento y las anteriores son resúmenes o introducción del evento.
+- [X] El detalle en las fichas que se encuentran en Home o Upcoming Events y Past Events debe ser menor que el que encontramos en Details, esto es debido a que esta última completa toda la información del evento y las anteriores son resúmenes o introducción del evento.
 
 - [X] Utiliza las fotos que te enviamos para hacer las fichas de los eventos.
 
