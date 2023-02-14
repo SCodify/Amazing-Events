@@ -159,3 +159,33 @@ footer a:focus
     color: white;
 }
 
+.table-container {
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+table {
+    margin: 40px 0px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    width: 100% !important; 
+}
+
+
+th {
+    padding: 10px;
+    margin: auto;
+    text-align: start;
+}
+
+td{
+    padding: 10px;
+    white-space:nowrap; 
+    vertical-align:top;
+}
+
