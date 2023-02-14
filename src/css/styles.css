@@ -11,11 +11,53 @@
 
 :root {
     --accent-color: #da106fff; 
+    --footer-color: #46bba5;
+    --text-color: #282442ff;
+    --disable-text-color: #6a6180;
+    --secondary-color1: #ed5555ff;
+    --secondary-color2: #ffba05ff;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Raleway', sans-serif;
+}
+
+p, span {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navbar {
     border-bottom: 2px solid var(--accent-color);
     --bs-navbar-toggler-border-radius: 0rem;
+    --bs-navbar-active-color: var(--text-color);
+    --bs-navbar-color: var(--disable-text-color);
+}
+
+.bi-caret-left-fill, .bi-caret-right-fill {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+}
+
+.back, .next {
+    transition: all 0.5s ease;
+}    
+
+.back:hover, .next:hover {
+    transform: scale(1.5);
+}
+
+header a {
+    color: var(--accent-color);
+}
+
+.divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
 }
 
 .bi-list {
@@ -39,7 +81,81 @@
     color: var(--accent-color) !important;
 }
 
+.active {
+    font-weight: bold;
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 51px - 156px - 96px - 73px) ;
+    /* 
+    nav: 50px (mobile) / 58px (descktop)
+    header: 156px
+    dividers: 48px * 2
+    footer: 72px
+    */
+}
+
+.row {
+    width: 100%;
+}
+
+
 footer {
+    background-color: var(--footer-color);
+    color: var(--text-color);
+}
+
+footer a,
+footer a:hover,
+footer a:active,
+footer a:focus
+{
+    color: var(--text-color);
+}
+
+.form-check-label {
+    white-space: nowrap;
+}
+
+.form-check-input:checked {
     background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-control {
+    border-radius: 0rem;
+}
+
+.btn-outline-secondary {
+    --bs-btn-border-radius: 0rem; 
+}
+
+.card-event {
+    /* -webkit-box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.38);
+    -moz-box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.38);
+    box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.38); */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-event img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: var(--secondary-color2);
+}
+
+.btn-bottom .btn {
+    background-color: var(--text-color);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-bottom .btn:hover {
+    background-color: var(--secondary-color1);
     color: white;
 }
+

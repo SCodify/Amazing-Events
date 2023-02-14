@@ -22,20 +22,20 @@ Mientras trabajo con Amazing Events en los objetivos de su proyecto, me gustarí
 ## Mockup
 
 ### Home:
-![](./Mockup/HOME.png)
+![](./mockup/HOME.png)
 
 ### Events:
 - Tenga en cuenta que es una página para Upcoming Events y otra para los Past Events con el mismo diseño
 
-![](./Mockup/EVENTS.png)
+![](./mockup/EVENTS.png)
 ### Contact:
-![](./Mockup/CONTACT.png)
+![](./mockup/CONTACT.png)
 
 ### Details:
-![](./Mockup/DETAILS.png)
+![](./mockup/DETAILS.png)
 
 ### Stats:
-![](./Mockup/STATS.png)
+![](./mockup/STATS.png)
 
 ## Datos
 
@@ -54,7 +54,32 @@ Cada evento contiene los siguientes datos:
 
 - [X] Tu navBar debe estar funcionando y debes poder navegar entre las diferentes páginas. 
 
-- [] Evita tener errores del Validador, estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
+- [X] Evita tener errores del Validador.
+
+- [X] Estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
+
+    Estructura de carpetas del proyecto:
+    ```
+    Amazing-Events/
+    ├── assets
+    │   └── images/
+    ├── public/
+    │   ├── index.html
+    │   ├── contact.html
+    │   ├── details.html
+    │   ├── past.html
+    │   ├── stats.html
+    │   └── upcoming.html
+    ├── src/
+    │   ├── js/
+    │   │   └── main.js
+    │   └── scss/
+    │       └── styles.scss
+    ├── .gitignore
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
+    ```
 
 - [X] Puedes utilizar tu propio CSS o la librería que prefieras, si lo haces con una librería, asegúrate de que tu proyecto te representa, es decir, que los componentes no son idénticos a los que se encuentran en la librería.
 
@@ -62,6 +87,6 @@ Cada evento contiene los siguientes datos:
 
 - [] El detalle en las fichas que se encuentran en Home o Upcoming Events y Past Events debe ser menor que el que encontramos en Details, esto es debido a que esta última completa toda la información del evento y las anteriores son resúmenes o introducción del evento.
 
-- [] Utiliza las fotos que te enviamos para hacer las fichas de los eventos.
+- [X] Utiliza las fotos que te enviamos para hacer las fichas de los eventos.
 
-- [] Distribuye correctamente los espacios y ten en cuenta que este proyecto será full responsive.
+- [W] Distribuye correctamente los espacios y ten en cuenta que este proyecto será full responsive.
