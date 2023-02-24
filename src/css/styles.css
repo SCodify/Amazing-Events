@@ -159,7 +159,8 @@ footer a:focus
     color: white;
 }
 
-.table-container {
+
+.tableContainer {
     overflow-x: auto;
     display: flex;
     flex-wrap: nowrap;
@@ -167,15 +168,9 @@ footer a:focus
 }
 
 table {
-    margin: 40px 0px;
-    border-collapse: collapse;
     width: 100%;
+    border-collapse: collapse;
 }
-
-tr {
-    width: 100% !important; 
-}
-
 
 th {
     padding: 10px;
@@ -185,7 +180,38 @@ th {
 
 td{
     padding: 10px;
+    border-bottom: 1px solid rgb(131, 131, 131);
     white-space:nowrap; 
     vertical-align:top;
 }
 
+thead th {
+    white-space:nowrap; 
+}
+
+/* 
+.table {
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+
+td, th{
+    white-space:nowrap; 
+    width: 100%;
+}
+*/
+
+@media screen and (max-width: 576px){
+    .card-event {
+        border-radius: 0px;
+    }
+}
+
+@media screen and (max-width: 250px){
+    .secondary-nav  {
+        flex-direction: column;
+    }
+}
