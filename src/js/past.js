@@ -1,5 +1,3 @@
-/* Filtro eventos pasados */
-
 const arrayEventos = data.events;
 
 let fechaActual = data.currentDate;
@@ -13,8 +11,6 @@ function filtrarEventosPasados(arrayEventos, fechaActual) {
             eventosPasados.push(evento)
         }
     }
-    console.log("eventos pasados: ",eventosPasados);
-
 }
 
 filtrarEventosPasados(arrayEventos, fechaActual)
