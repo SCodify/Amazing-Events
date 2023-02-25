@@ -1,5 +1,3 @@
-/* Filtro eventos Futuros */
-
 const arrayEventos = data.events;
 
 let fechaActual = data.currentDate;
@@ -13,8 +11,6 @@ function filtrarEventosFuturos(arrayEventos, fechaActual) {
             eventosFuturos.push(evento)
         }
     }
-    console.log("eventos Futuros: ",eventosFuturos);
-
 }
 
 filtrarEventosFuturos(arrayEventos, fechaActual)

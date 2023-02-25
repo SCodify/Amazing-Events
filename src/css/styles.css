@@ -89,10 +89,11 @@ main {
     width: 100%;
     min-height: calc(100vh - 51px - 156px - 96px - 73px) ;
     /* 
-    nav: 50px (mobile) / 58px (descktop)
-    header: 156px
-    dividers: 48px * 2
-    footer: 72px
+    Medidas:
+        nav: 50px (mobile) / 58px (descktop)
+        header: 156px
+        dividers: 48px * 2
+        footer: 72px
     */
 }
 
@@ -132,9 +133,9 @@ footer a:focus
 }
 
 .card-event {
-    /* -webkit-box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.38);
-    -moz-box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.38);
-    box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.38); */
+    -webkit-box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.5);
     border-radius: 15px;
     overflow: hidden;
 }
@@ -188,21 +189,6 @@ td{
 thead th {
     white-space:nowrap; 
 }
-
-/* 
-.table {
-    overflow-x: scroll;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
-
-
-td, th{
-    white-space:nowrap; 
-    width: 100%;
-}
-*/
 
 .main-details {
     min-height: calc(100vh - 50px - 96px - 72px);
