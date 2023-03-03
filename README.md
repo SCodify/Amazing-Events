@@ -15,6 +15,11 @@
     - [Requerimientos del cliente](#task-2)
     - [Datos task 2](#datos-task-2)
     - [Entrega task 2](#entrega-task-2)
+- [Task 3](#task-3)
+    - [Requerimientos del cliente](#task-3)
+    - [Datos task 3](#datos-task-3)
+    - [Sugerencias task 3](#sugerencias-task-3)
+    - [Entrega task 3](#entrega-task-3)
 
 # Task 1
 
@@ -79,7 +84,7 @@ Cada evento contiene los siguientes datos:
     │   └── upcoming.html
     ├── src/
     │   ├── js/
-    │   │   └── main.js
+    │   │   └── index.js
     │   └── css/
     │       └── styles.css
     ├── .gitignore
@@ -123,4 +128,65 @@ El archivo que le enviamos contiene información sobre los eventos, dos eventos 
 
 - Una vez generadas las plantillas, imprímalas en su HTML correspondiente.
 
-- Le aconsejamos que genere un fichero JS para cada página HTML, de esta forma la información estará más organizada y será más fácil hacer escalable tu aplicación.
+- Le aconsejamos que genere un archivo JS para cada página HTML, de esta forma la información estará más organizada y será más fácil hacer escalable tu aplicación.
+
+    Nueva estructura de carpetas del proyecto:
+    ```
+    Amazing-Events/
+    ├── assets
+    │   └── images/
+    ├── public/
+    │   ├── index.html
+    │   ├── contact.html
+    │   ├── details.html
+    │   ├── past.html
+    │   ├── stats.html
+    │   └── upcoming.html
+    ├── src/
+    │   ├── js/
+    │   │   ├── data.js
+    │   │   ├── index.js
+    │   │   ├── past.js
+    │   │   └── upcoming.js
+    │   └── css/
+    │       └── styles.css
+    ├── .gitignore
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
+    ```
+
+# Task 3
+
+## Requerimientos del cliente:
+
+> Hola de nuevo, en Amazing Events solicitan que incorporemos filtros en los proyectos, requieren un filtro de búsqueda por texto y filtros por categorías de eventos.  
+Los filtros deben ser incorporados en la página de Home, Past Events y Upcoming Events.  
+Adicionalmente, requieren que el detalle del evento también pueda ser utilizado. Con tus habilidades confiamos en que puedas lograrlo.
+
+## Datos task 3
+
+Revise de nuevo las maquetas que enviamos anteriormente para incorporar los solicitados por nuestros clientes, tenga en cuenta que los mismos deben estar presentes en las páginas Past Events y Upcoming Events.
+
+## Sugerencias task 3
+
+- Incorpore entradas de búsqueda y casillas de verificación de categorías en sus páginas de Home, Past Events y Upcoming Events.
+
+- Te aconsejamos que empieces por el input de búsqueda, capturando los datos que el usuario teclee en este, ordenando la cadena que has capturado y pasándola a minúsculas, después filtra estos datos con el nombre del evento del fichero de datos también pasado a minúsculas para igualar los valores y finalmente guarda el array resultante del filtro para mostrarlo en tu html.
+
+- Para las casillas de verificación, te aconsejamos que extraigas las categorías dinámicamente del fichero de datos del evento, elimines las repetidas para obtener un único valor para cada una y luego con el array resultante del filtro lo muestres en tu html.  
+
+- Para que los filtros funcionen en combinación, defina condicionales que evalúen si la entrada tiene un valor o si las casillas de verificación están marcadas.
+
+
+## Entrega task 3
+
+- Incorporar filtros por input search y checkbox por categorías.
+
+- Los filtros deben funcionar tanto de forma independiente como combinada.
+
+- En caso de que no se encuentre ningún evento con los filtros, se debe pedir al usuario que ajuste los filtros para encontrar un evento.
+
+- Los filtros deben estar presentes en las páginas Home, Past Events y Upcoming Events.
+
+- Al hacer clic en la ficha del evento, éste debe aparecer en la página Details.

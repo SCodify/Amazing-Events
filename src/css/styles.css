@@ -87,12 +87,13 @@ header a {
 
 main {
     width: 100%;
-    min-height: calc(100vh - 51px - 156px - 96px - 73px) ;
+    min-height: calc(100vh - 58px - 156px - 96px - 24px - 72px) ;
     /* 
     Medidas:
         nav: 50px (mobile) / 58px (descktop)
         header: 156px
         dividers: 48px * 2
+        margin container main: 24px
         footer: 72px
     */
 }
@@ -128,14 +129,14 @@ footer a:focus
     border-radius: 0rem;
 }
 
-.btn-outline-secondary {
-    --bs-btn-border-radius: 0rem; 
+.input-group-text {
+    border-radius: 0rem; 
 }
 
 .card-event {
     -webkit-box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.5);
-    box-shadow: 0px 5px 8px -1px rgba(0,0,0,0.5);
+    box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 10%), 0 0.125em 0.5em rgb(0 0 0 / 15%);
     border-radius: 15px;
     overflow: hidden;
 }
@@ -153,6 +154,8 @@ footer a:focus
     background-color: var(--text-color);
     color: white;
     cursor: pointer;
+    width: min-content;
+    white-space:nowrap; 
 }
 
 .btn-custom:hover {
@@ -191,7 +194,7 @@ thead th {
 }
 
 .main-details {
-    min-height: calc(100vh - 50px - 96px - 72px);
+    min-height: calc(100vh - 58px - 96px - 72px);
 }
 
 .container-details {
@@ -200,11 +203,7 @@ thead th {
     align-self: center;
 }
 
-@media screen and (max-width: 576px){
-    .card-event {
-        border-radius: 0px;
-    }
-
+@media screen and (max-width: 992px){
     .card-event-detail {
         flex-direction: column !important;
         border-radius: 15px !important;
