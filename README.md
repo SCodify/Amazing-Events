@@ -70,7 +70,7 @@ Cada evento contiene los siguientes datos:
 
 - Estructura correctamente la carpeta de tu proyecto y define correctamente los nombres de cada uno de los archivos.
 
-    Estructura de carpetas del proyecto:
+    Estructura de archivos del proyecto:
     ```
     Amazing-Events/
     ├── assets
@@ -130,7 +130,7 @@ El archivo que le enviamos contiene información sobre los eventos, dos eventos 
 
 - Le aconsejamos que genere un archivo JS para cada página HTML, de esta forma la información estará más organizada y será más fácil hacer escalable tu aplicación.
 
-    Nueva estructura de carpetas del proyecto:
+    Nueva estructura de archivos del proyecto:
     ```
     Amazing-Events/
     ├── assets
@@ -190,3 +190,29 @@ Revise de nuevo las maquetas que enviamos anteriormente para incorporar los soli
 - Los filtros deben estar presentes en las páginas Home, Past Events y Upcoming Events.
 
 - Al hacer clic en la ficha del evento, éste debe aparecer en la página Details.
+
+    Se agrega `details.js` a la estructura de archivos del proyecto:
+    ```
+    Amazing-Events/
+    ├── assets
+    │   └── images/
+    ├── public/
+    │   ├── index.html
+    │   ├── contact.html
+    │   ├── details.html
+    │   ├── past.html
+    │   ├── stats.html
+    │   └── upcoming.html
+    ├── src/
+    │   ├── js/
+    │   │   ├── data.js
+    │   │   ├── index.js
+    │   │   ├── past.js
+    │   │   └── upcoming.js
+    │   └── css/
+    │       └── styles.css
+    ├── .gitignore
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
+    ```
