@@ -21,7 +21,7 @@ function mostrarEventos(array) {
                     
                     <div class="btn-bottom d-flex justify-content-between align-items-center mt-3">
                         <p class="m-0">Price: $${evento.price}</p>
-                        <a class="btn btn-custom" href="../public/details.html?id=${evento._id}&prevpage=index&text=Home">See more...</a>
+                        <a class="btn btn-custom" href="../public/details.html?id=${evento._id}&prevpage=past&text=Past">See more...</a>
                     </div>
                 </div>
             </div>
