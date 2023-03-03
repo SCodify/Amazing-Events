@@ -34,7 +34,8 @@ function mostrarEvento(container, evento) {
                         <p class="card-text"><strong>Description:</strong> <em>${evento.description}</em></p>
                         <p class="card-text"><strong>Category:</strong> ${evento.category}</p>
                         <p class="card-text"><strong>Capacity:</strong> ${evento.capacity}</p>
-                        <p class="card-text" style="${evento.assistance == undefined?'display: none;':''}"><strong>Assistence or estimate:</strong> ${evento.assistance}</p>
+                        <p class="card-text" style="${evento.assistance == undefined?'display: none;':''}"><strong>Assistence:</strong> ${evento.assistance}</p>
+                        <p class="card-text" style="${evento.estimate == undefined?'display: none;':''}"><strong>Estimate:</strong> ${evento.estimate}</p>
                         <p class="card-text"><strong>Price:</strong> $${evento.price}</p>
                     </div>
                     <a class="btn btn-custom mt-4 align-self-end" href="../public/${previousPage}.html">Return ${text}</a>
