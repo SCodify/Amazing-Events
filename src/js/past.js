@@ -32,6 +32,8 @@ function mostrarEventos(array) {
 
 contenedorEventos.innerHTML = mostrarEventos(eventosPasados)
 
+
+
 /* CATEGORÌAS -------------------------------------------------------------------------------------- */
 
 /* 1° crear un array de string con las categorías de data.events */
@@ -84,16 +86,27 @@ function mostrarEventosFiltrados(arrayEventos, categoriasFiltradas, eventosBusca
 
     console.log(eventosFiltradosPorCategoria);
     if(eventosBuscados.length == 0){
-        htmlFiltrado = mostrarEventos(eventosFiltradosPorCategoria)
-        contenedorEventos.innerHTML = mostrarEventos(eventosFiltradosPorCategoria)  
+        if(buscador.value == 0) {
+            htmlFiltrado = mostrarEventos(eventosFiltradosPorCategoria)
+            contenedorEventos.innerHTML = mostrarEventos(eventosFiltradosPorCategoria)
+            console.log("1° if"); 
+        }
     } else if(categoriasFiltradas.length == 0) {
+        console.log("2° if"); 
         let eventosFiltradosPorBusqueda = arrayEventos.filter(evento => eventosBuscados.includes(evento.name))
         htmlFiltrado = mostrarEventos(eventosFiltradosPorBusqueda)
         contenedorEventos.innerHTML = mostrarEventos(eventosFiltradosPorBusqueda)
     } else {
-        let categoriasFiltradosPorBusqueda = eventosFiltradosPorCategoria.filter(evento => eventosBuscados.includes(evento.name))
-        htmlFiltrado = mostrarEventos(categoriasFiltradosPorBusqueda)
-        contenedorEventos.innerHTML = mostrarEventos(categoriasFiltradosPorBusqueda)
+        console.log("3° if"); 
+        let categoriasFiltradasPorBusqueda = eventosFiltradosPorCategoria.filter(evento => eventosBuscados.includes(evento.name))
+        let busquedaSeEncuentraEn = arrayEventos.filter(evento => eventosBuscados.includes(evento.name))
+        
+        if(categoriasFiltradasPorBusqueda.length == 0) {
+            contenedorEventos.innerHTML = `<p class="text-center text-danger">No event "<strong>${buscador.value}</strong>" has been found in the category "<strong>${categoriasFiltradas.join(", ")}</strong>".</p>`
+        } else {
+            htmlFiltrado = mostrarEventos(categoriasFiltradasPorBusqueda)
+            contenedorEventos.innerHTML = mostrarEventos(categoriasFiltradasPorBusqueda)
+        }
     }
 }
 
@@ -111,12 +124,13 @@ contenedorCategorias.addEventListener('change', function(event) {
         if(categoriasSeleccionadas.length != 0) {
             mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
         } else {
-            if (arrayEventosBuscados.length == 0) {
+            if (arrayEventosBuscados.length == 0 && buscador.value == "") {
                 contenedorEventos.innerHTML = mostrarEventos(arrayEventos)
+            } else if (arrayEventosBuscados.length == 0 && buscador.value != "" && arrayEventosBuscados.length == 0){
+                contenedorEventos.innerHTML = `<p class="text-center text-danger">The searched event does not exist.</p>`
             } else {
                 mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
             }
-
         }
     }
 })
