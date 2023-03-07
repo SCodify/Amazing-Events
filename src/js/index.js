@@ -14,6 +14,7 @@ function mostrarEventos(array) {
                 <div class="card-body p-4 d-flex flex-column justify-content-between">
                     <div class="text-container">
                         <h5 class="card-title">${evento.name}</h5>
+                        <p class="card-text"><small>Date: ${evento.date}</small></p>
                         <p class="card-text">${evento.description}</p>
                     </div>
                     
@@ -82,22 +83,18 @@ function mostrarEventosFiltrados(arrayEventos, categoriasFiltradas, eventosBusca
     let htmlFiltrado = "";
     let eventosFiltradosPorCategoria = arrayEventos.filter(evento => categoriasFiltradas.includes(evento.category))
 
-    console.log(eventosFiltradosPorCategoria);
     if(eventosBuscados.length == 0){
         if(buscador.value == 0) {
             htmlFiltrado = mostrarEventos(eventosFiltradosPorCategoria)
             contenedorEventos.innerHTML = mostrarEventos(eventosFiltradosPorCategoria)
-            console.log("1° if"); 
         }
     } else if(categoriasFiltradas.length == 0) {
-        console.log("2° if"); 
         let eventosFiltradosPorBusqueda = arrayEventos.filter(evento => eventosBuscados.includes(evento.name))
         htmlFiltrado = mostrarEventos(eventosFiltradosPorBusqueda)
         contenedorEventos.innerHTML = mostrarEventos(eventosFiltradosPorBusqueda)
     } else {
-        console.log("3° if"); 
         let categoriasFiltradasPorBusqueda = eventosFiltradosPorCategoria.filter(evento => eventosBuscados.includes(evento.name))
-        let busquedaSeEncuentraEn = arrayEventos.filter(evento => eventosBuscados.includes(evento.name))
+        //let busquedaSeEncuentraEn = arrayEventos.filter(evento => eventosBuscados.includes(evento.name))
         
         if(categoriasFiltradasPorBusqueda.length == 0) {
             contenedorEventos.innerHTML = `<p class="text-center text-danger">No event "<strong>${buscador.value}</strong>" has been found in the category "<strong>${categoriasFiltradas.join(", ")}</strong>".</p>`
@@ -107,6 +104,7 @@ function mostrarEventosFiltrados(arrayEventos, categoriasFiltradas, eventosBusca
         }
     }
 }
+
 
 /* Escuchar cambios en los checkbox de categorías */
 
@@ -133,6 +131,7 @@ contenedorCategorias.addEventListener('change', function(event) {
     }
 })
 
+
 /* Buscar evento*/
 
 let arrayEventosBuscados = []
@@ -149,7 +148,6 @@ buscador.addEventListener('input', function() {
     if(arrayEventosBuscados.length == 0) {
         contenedorEventos.innerHTML = `<p class="text-center text-danger">The event "<strong>${ buscador.value }</strong>" was not found.</p>`
     } else {
-        console.log("arrayEventosBuscados: ", arrayEventosBuscados); 
         mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
     }
 });

@@ -8,8 +8,6 @@ const previousPage = params.get("prevpage")
 
 const text = params.get("text")
 
-
-
 const arrayEventos = data.events
 
 let eventoSeleccionado = arrayEventos.find(evento => evento._id == id)
