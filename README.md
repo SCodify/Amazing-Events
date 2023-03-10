@@ -34,20 +34,20 @@ Mientras trabajo con Amazing Events en los objetivos de su proyecto, me gustarí
 ## Mockup
 
 ### Home:
-![](./mockup/HOME.png)
+![](./README/HOME.png)
 
 ### Events:
 - Tenga en cuenta que es una página para Upcoming Events y otra para los Past Events con el mismo diseño
 
-![](./mockup/EVENTS.png)
+![](./README/EVENTS.png)
 ### Contact:
-![](./mockup/CONTACT.png)
+![](./README/CONTACT.png)
 
 ### Details:
-![](./mockup/DETAILS.png)
+![](./README/DETAILS.png)
 
 ### Stats:
-![](./mockup/STATS.png)
+![](./README/STATS.png)
 
 ## Datos task 1
 

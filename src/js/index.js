@@ -82,7 +82,7 @@ contenedorCategorias.innerHTML = htmlCategorias
 function mostrarEventosFiltrados(arrayEventos, categoriasFiltradas, eventosBuscados) {
     let htmlFiltrado = "";
     let eventosFiltradosPorCategoria = arrayEventos.filter(evento => categoriasFiltradas.includes(evento.category))
-
+    
     if(eventosBuscados.length == 0){
         if(buscador.value == 0) {
             htmlFiltrado = mostrarEventos(eventosFiltradosPorCategoria)
