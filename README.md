@@ -20,6 +20,13 @@
     - [Datos task 3](#datos-task-3)
     - [Sugerencias task 3](#sugerencias-task-3)
     - [Entrega task 3](#entrega-task-3)
+- [Task 4](#task-4)
+    - [Requerimientos del cliente](#task-4)
+    - [Datos task 4](#datos-task-4)
+    - [Página Stats](#página-stats)
+    - [Tablas de Stats](#tablas-de-stats)
+    - [Entrega task 4](#entrega-task-4)
+    - [Estructura final de archivos del proyecto](#estructura-final-de-archivos-del-proyecto)
 
 # Task 1
 
@@ -206,6 +213,7 @@ Revise de nuevo las maquetas que enviamos anteriormente para incorporar los soli
     ├── src/
     │   ├── js/
     │   │   ├── data.js
+    │   │   ├── details.js
     │   │   ├── index.js
     │   │   ├── past.js
     │   │   └── upcoming.js
@@ -216,3 +224,90 @@ Revise de nuevo las maquetas que enviamos anteriormente para incorporar los soli
     ├── package.json
     └── README.md
     ```
+# Task 4
+
+> Hola de nuevo, has hecho un excelente trabajo con las demos, ahora es tiempo de integrar tu web app a la base de datos, y completar la pagina de estadisticas. Te envié el link para que puedas hacerlo, éxito.  
+https://amazing-events.herokuapp.com/api/events  
+Envíame un archivo .zip de la página web una vez que hayas terminado.
+Gracias.
+
+## Datos task 4
+
+Para completar esta etapa tendrás el endpoint de la API de Amazing Events y recuerda que en la presentación del proyecto encontrarás el mockup de la página Stats, que te indica qué datos debe contener, te lo adjuntamos de todas formas.
+
+## Página Stats:
+![](./README/STATS.png)
+
+### Tablas de Stats
+
+- Estadísticas de eventos
+
+    - Eventos con mayor porcentaje de asistencia
+
+    - Eventos con menor porcentaje de asistencia
+
+    - Evento con mayor capacidad
+
+
+
+- Estadísticas de próximos eventos por categoría
+
+    - Categorías
+
+    - Ingresos
+
+    - Porcentaje de asistencia
+
+
+
+- Estadística de eventos pasados por categoría
+
+    - Categorías
+
+    - Ingresos
+
+    - Porcentaje de asistencia
+
+## Entrega task 4
+
+- Con la información de eventos de la Api tendrás que reemplazar el array con los datos por el fetch a la API para obtener toda la info desde allí.
+
+- Recuerda que tus funciones lógicas para crear checkboxes, filtrar y demás acciones siguen siendo las mismas, lo que cambia es de dónde viene el array con los datos necesarios.
+
+- La información en la página de Estadísticas debe ser dinámica, es decir, los datos que contiene deben ser generados usando JavaScript y no colocados directamente en HTML.
+
+- La ESTRUCTURA de la tabla puede estar directamente en HTML.
+
+- Ten en cuenta cuando solicites ingresos o asistencia, por ejemplo, que los eventos futuros no representan asistencia o ingresos reales, sino que son estimaciones, ten en cuenta estos datos porque si los tenemos en cuenta puede afectar directamente al resultado obtenido.
+
+## Estructura final de archivos del proyecto
+
+Se agrega `stats.js` y `data.json` a la estructura de archivos del proyecto y se elimina `data.js`:
+```
+Amazing-Events/
+├── assets
+│   └── images/
+├── public/
+│   ├── index.html
+│   ├── contact.html
+│   ├── details.html
+│   ├── past.html
+│   ├── stats.html
+│   └── upcoming.html
+├── src/
+│   ├── data/
+│   │   └── data.json
+│   ├── js/
+│   │   ├── details.js
+│   │   ├── index.js
+│   │   ├── past.js
+│   │   ├── stats.js
+│   │   └── upcoming.js
+│   └── css/
+│       └── styles.css
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
+[comment]: # (Proyecto realizado por Christian Ledesma)

@@ -1,10 +1,65 @@
-const arrayEventos = data.events
-
-let fechaActual = data.currentDate
-
-const eventosFuturos = arrayEventos.filter((evento) => evento.date > fechaActual)
-
 const contenedorEventos = document.querySelector(".contenedor-eventos")
+const contenedorCategorias = document.querySelector(".contenedor-categorias")
+const buscador = document.querySelector(".buscador")
+
+async function obtenerdatos() {
+    try {
+        /* const response = await fetch("/src/data/data.json") */
+        const response = await fetch("https://mindhub-xj03.onrender.com/api/amazing")
+        const datos = await response.json()
+        
+        const fechaActual = datos.currentDate
+        const arrayEventos = datos.events.filter((evento) => evento.date > fechaActual)
+
+        contenedorEventos.innerHTML = mostrarEventos(arrayEventos)
+
+        const arrayCategorias = obtenerCategoriasSinRepetir(arrayEventos)
+
+        contenedorCategorias.innerHTML = mostrarCategorias(arrayCategorias)
+
+        let categoriasSeleccionadas = []
+
+        contenedorCategorias.addEventListener('change', function(event) {
+            if (event.target.type === 'checkbox') {
+                if (event.target.checked) {
+                    categoriasSeleccionadas.push(event.target.value)
+                } else {
+                    categoriasSeleccionadas = categoriasSeleccionadas.filter(categoria => categoria != event.target.value)
+                }    
+                if(categoriasSeleccionadas.length != 0) {
+                    mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
+                } else {
+                    if (arrayEventosBuscados.length == 0 && buscador.value == "") {
+                        contenedorEventos.innerHTML = mostrarEventos(arrayEventos)
+                    } else {
+                        mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
+                    }
+                }
+            }
+        })
+
+        let arrayEventosBuscados = []
+
+        buscador.addEventListener('input', function() {
+            const valorBuscado = buscador.value.toLowerCase();
+            
+            arrayEventosBuscados = arrayEventos.filter(function(item) {
+            return item.name.toLowerCase().includes(valorBuscado);
+            });
+            
+            arrayEventosBuscados = arrayEventosBuscados.map(eventos => eventos.name)
+            if(arrayEventosBuscados.length == 0) {
+                contenedorEventos.innerHTML = `<p class="text-center text-danger">The event "<strong>${ buscador.value }</strong>" was not found.</p>`
+            } else {
+                mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
+            }
+        });
+    } catch(error) {
+        console.log(error.message);
+    }
+}
+
+obtenerdatos()
 
 function mostrarEventos(array) {
     let eventosHtml = ""
@@ -22,7 +77,7 @@ function mostrarEventos(array) {
                     
                     <div class="btn-bottom d-flex justify-content-between align-items-center mt-3">
                         <p class="m-0">Price: $${evento.price}</p>
-                        <a class="btn btn-custom" href="../public/details.html?id=${evento._id}&prevpage=upcoming&text=Upcoming">See more...</a>
+                        <a class="btn btn-custom" href="../public/details.html?id=${evento._id}&prevpage=index&text=Home">See more...</a>
                     </div>
                 </div>
             </div>
@@ -31,38 +86,25 @@ function mostrarEventos(array) {
     return eventosHtml
 }
 
-contenedorEventos.innerHTML = mostrarEventos(eventosFuturos)
+function obtenerCategoriasSinRepetir(array) {
+    const arrayCategorias = array.map(evento => evento.category)
+    
+    const arrayCategoriasSinRepetir = arrayCategorias.reduce((acumulador, valorActual) => {
+        if(!acumulador.includes(valorActual)) {
+            acumulador.push(valorActual)
+        }
+        return acumulador
+    }, [])
 
+    return arrayCategoriasSinRepetir
+}
 
-
-/* CATEGORÌAS -------------------------------------------------------------------------------------- */
-
-/* 1° crear un array de string con las categorías de data.events */
-
-const arrayCategorias = arrayEventos.map(evento => evento.category)
-
-
-/* 2° crear un array reducido del array de categorías en el que se eliminen las categorías repetidas */
-
-const arrayCategoriasSinRepetir = arrayCategorias.reduce((acumulador, valorActual) => {
-    if(!acumulador.includes(valorActual)) {
-        acumulador.push(valorActual)
-    }
-    return acumulador
-}, [])
-
-
-/* 3° hacer la lógica para que se muestren sobre el DOM los elementos de array de categorìas si repetir */
-
-const contenedorCategorias = document.querySelector(".contenedor-categorias")
-
-
-function mostrarCategorias(arrayCategorias){
+function mostrarCategorias(array){
     let categorias = ""
     
     let idNumber = 1
     
-    arrayCategorias.forEach(evento => {
+    array.forEach(evento => {
         categorias += `
             <div class="form-check form-check-inline m-0">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox${idNumber}" value="${evento}">
@@ -75,27 +117,22 @@ function mostrarCategorias(arrayCategorias){
     return categorias
 }
 
-let htmlCategorias = mostrarCategorias(arrayCategoriasSinRepetir)
-
-contenedorCategorias.innerHTML = htmlCategorias
-
-/* Filtrar las categorías y busqueda */
-
-function mostrarEventosFiltrados(arrayEventos, categoriasFiltradas, eventosBuscados) {
+function mostrarEventosFiltrados(array, categoriasFiltradas, eventosBuscados) {
     let htmlFiltrado = "";
-    let eventosFiltradosPorCategoria = arrayEventos.filter(evento => categoriasFiltradas.includes(evento.category))
-
+    let eventosFiltradosPorCategoria = array.filter(evento => categoriasFiltradas.includes(evento.category))
+    
     if(eventosBuscados.length == 0){
         if(buscador.value == 0) {
             htmlFiltrado = mostrarEventos(eventosFiltradosPorCategoria)
             contenedorEventos.innerHTML = mostrarEventos(eventosFiltradosPorCategoria)
         }
     } else if(categoriasFiltradas.length == 0) {
-        let eventosFiltradosPorBusqueda = arrayEventos.filter(evento => eventosBuscados.includes(evento.name))
+        let eventosFiltradosPorBusqueda = array.filter(evento => eventosBuscados.includes(evento.name))
         htmlFiltrado = mostrarEventos(eventosFiltradosPorBusqueda)
         contenedorEventos.innerHTML = mostrarEventos(eventosFiltradosPorBusqueda)
     } else {
         let categoriasFiltradasPorBusqueda = eventosFiltradosPorCategoria.filter(evento => eventosBuscados.includes(evento.name))
+        
         if(categoriasFiltradasPorBusqueda.length == 0) {
             contenedorEventos.innerHTML = `<p class="text-center text-danger">No event "<strong>${buscador.value}</strong>" has been found in the category "<strong>${categoriasFiltradas.join(", ")}</strong>".</p>`
         } else {
@@ -104,48 +141,3 @@ function mostrarEventosFiltrados(arrayEventos, categoriasFiltradas, eventosBusca
         }
     }
 }
-
-/* Escuchar cambios en los checkbox de categorías */
-
-let categoriasSeleccionadas = []
-
-contenedorCategorias.addEventListener('change', function(event) {
-    if (event.target.type === 'checkbox') {
-        if (event.target.checked) {
-            categoriasSeleccionadas.push(event.target.value)
-        } else {
-            categoriasSeleccionadas = categoriasSeleccionadas.filter(categoria => categoria != event.target.value)
-        }    
-        if(categoriasSeleccionadas.length != 0) {
-            mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
-        } else {
-            if (arrayEventosBuscados.length == 0 && buscador.value == "") {
-                contenedorEventos.innerHTML = mostrarEventos(arrayEventos)
-            } else if (arrayEventosBuscados.length == 0 && buscador.value != "" && arrayEventosBuscados.length == 0){
-                contenedorEventos.innerHTML = `<p class="text-center text-danger">The searched event does not exist.</p>`
-            } else {
-                mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
-            }
-        }
-    }
-})
-
-/* Buscar evento*/
-
-let arrayEventosBuscados = []
-
-const buscador = document.querySelector(".buscador")
-buscador.addEventListener('input', function() {
-    const valorBuscado = buscador.value.toLowerCase();
-    
-    arrayEventosBuscados = arrayEventos.filter(function(item) {
-      return item.name.toLowerCase().includes(valorBuscado);
-    });
-    
-    arrayEventosBuscados = arrayEventosBuscados.map(eventos => eventos.name)
-    if(arrayEventosBuscados.length == 0) {
-        contenedorEventos.innerHTML = `<p class="text-center text-danger">The event "<strong>${ buscador.value }</strong>" was not found.</p>`
-    } else {
-        mostrarEventosFiltrados(arrayEventos, categoriasSeleccionadas, arrayEventosBuscados)
-    }
-});

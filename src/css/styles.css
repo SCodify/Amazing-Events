@@ -16,6 +16,7 @@
     --disable-text-color: #6a6180;
     --secondary-color1: #ed5555ff;
     --secondary-color2: #ffba05ff;
+    --table-border: 3px solid #575555;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -143,6 +144,7 @@ footer a:focus
 
 .card-event img {
     width: 100%;
+    height: 220px;
     object-fit: cover;
 }
 
@@ -172,6 +174,7 @@ footer a:focus
 }
 
 table {
+    display: table;
     width: 100%;
     border-collapse: collapse;
 }
@@ -187,6 +190,10 @@ td{
     border-bottom: 1px solid rgb(131, 131, 131);
     white-space:nowrap; 
     vertical-align:top;
+}
+
+thead {
+    border-bottom: var(--table-border);
 }
 
 thead th {
