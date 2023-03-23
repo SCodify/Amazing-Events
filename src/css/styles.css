@@ -88,7 +88,7 @@ header a {
 
 main {
     width: 100%;
-    min-height: calc(100vh - 58px - 156px - 96px - 24px - 72px) ;
+    min-height: calc(100vh - 58px - 156px - 96px - 24px - 72px);
     /* 
     Medidas:
         nav: 50px (mobile) / 58px (descktop)
@@ -132,6 +132,10 @@ footer a:focus
 
 .input-group-text {
     border-radius: 0rem; 
+}
+
+.contenedor-buscador {
+    margin: 9px 0px;
 }
 
 .card-event {
@@ -214,6 +218,9 @@ thead th {
     .card-event-detail {
         flex-direction: column !important;
         border-radius: 15px !important;
+    }
+    main {
+        min-height: calc(100vh - 52px - 156px - 96px - 24px - 72px);
     }
 }
 

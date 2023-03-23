@@ -2,7 +2,7 @@ const contenedorEventos = document.querySelector(".contenedor-eventos")
 const contenedorCategorias = document.querySelector(".contenedor-categorias")
 const buscador = document.querySelector(".buscador")
 
-async function obtenerdatos() {
+async function obtenerDatos() {
     try {
         /* const response = await fetch("/src/data/data.json") */
         const response = await fetch("https://mindhub-xj03.onrender.com/api/amazing")
@@ -58,7 +58,7 @@ async function obtenerdatos() {
     }
 }
 
-obtenerdatos()
+obtenerDatos()
 
 function mostrarEventos(array) {
     let eventosHtml = ""
@@ -75,7 +75,7 @@ function mostrarEventos(array) {
                     </div>
                     
                     <div class="btn-bottom d-flex justify-content-between align-items-center mt-3">
-                        <p class="m-0">Price: $${evento.price}</p>
+                        <p class="m-0">Price: ${formatearAPesos(evento.price)}</p>
                         <a class="btn btn-custom" href="../public/details.html?id=${evento._id}&prevpage=index&text=Home">See more...</a>
                     </div>
                 </div>
@@ -138,4 +138,13 @@ function mostrarEventosFiltrados(array, categoriasFiltradas, eventosBuscados) {
             contenedorEventos.innerHTML = mostrarEventos(categoriasFiltradasPorBusqueda)
         }
     }
+}
+
+function formatearAPesos(monto) {
+    const montoFormateado = new Intl.NumberFormat("es-AR",{
+      style: "currency",
+      currency: "ARS"
+    }).format(monto)
+  
+    return montoFormateado
 }

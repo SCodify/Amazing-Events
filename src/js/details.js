@@ -44,14 +44,31 @@ function mostrarEvento(container, evento) {
                         <p class="card-text"><strong>Description:</strong> <em>${evento.description}</em></p>
                         <p class="card-text"><strong>Category:</strong> ${evento.category}</p>
                         <p class="card-text"><strong>Place:</strong> ${evento.place}</p>
-                        <p class="card-text"><strong>Capacity:</strong> ${evento.capacity}</p>
-                        <p class="card-text" style="${evento.assistance == undefined?'display: none;':''}"><strong>Assistence:</strong> ${evento.assistance}</p>
-                        <p class="card-text" style="${evento.estimate == undefined?'display: none;':''}"><strong>Estimate:</strong> ${evento.estimate}</p>
-                        <p class="card-text"><strong>Price:</strong> $${evento.price}</p>
+                        <p class="card-text"><strong>Capacity:</strong> ${formatearNumero(evento.capacity)}</p>
+                        <p class="card-text" style="${evento.assistance == undefined?'display: none;':''}"><strong>Assistence:</strong> ${formatearNumero(evento.assistance)}</p>
+                        <p class="card-text" style="${evento.estimate == undefined?'display: none;':''}"><strong>Estimate:</strong> ${formatearNumero(evento.estimate)}</p>
+                        <p class="card-text"><strong>Price:</strong> ${formatearAPesos(evento.price)}</p>
                     </div>
-                    <a class="btn btn-custom mt-4 align-self-end" href="../public/${previousPage}.html">Return ${text}</a>
+                    <a class="btn btn-custom mt-4 align-self-end" href="../public/${previousPage}.html">Return to ${text}</a>
                 </div>
             </div>
         </div>
     </div>`
+}
+
+function formatearAPesos(monto) {
+    const montoFormateado = new Intl.NumberFormat("es-AR",{
+      style: "currency",
+      currency: "ARS"
+    }).format(monto)
+  
+    return montoFormateado
+}
+
+function formatearNumero(numero) {
+    const numeorFormateado = new Intl.NumberFormat("es-AR", {
+        maximumFractionDigits: 3,
+        }).format(numero)
+    
+    return numeorFormateado
 }
