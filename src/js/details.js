@@ -29,7 +29,7 @@ async function obtenerdatos() {
 obtenerdatos()
 
 function mostrarEvento(container, evento) {
-    container.innerHTML += `
+    container.innerHTML = `
     <div class="row m-0 px-4 py-5 justify-content-center">          
         <div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 col-xxl-12 p-0 d-flex align-self-stretch justify-content-center">
             <div class="card-event card-event-detail d-flex flex-row w-100">
