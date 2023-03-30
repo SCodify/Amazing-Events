@@ -12,8 +12,8 @@ const text = params.get("text")
 
 async function obtenerdatos() {
     try {
-        const response = await fetch("/src/data/data.json")
-        /* const response = await fetch("https://mindhub-xj03.onrender.com/api/amazing") */
+        /* const response = await fetch("/src/data/data.json") */
+        const response = await fetch("https://mindhub-xj03.onrender.com/api/amazing") 
         const datos = await response.json()
         
         const arrayEventos = datos.events
